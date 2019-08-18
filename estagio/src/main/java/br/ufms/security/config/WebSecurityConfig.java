@@ -33,10 +33,13 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 // Use BCryptPasswordEncoder
         auth.userDetailsService(jwtUserDetailsService).passwordEncoder(passwordEncoder());
     }
+
     @Bean
     public PasswordEncoder passwordEncoder() {
         return new BCryptPasswordEncoder();
     }
+
+
     @Bean
     @Override
     public AuthenticationManager authenticationManagerBean() throws Exception {
@@ -57,4 +60,9 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 // Add a filter to validate the tokens with every request
         httpSecurity.addFilterBefore(jwtRequestFilter, UsernamePasswordAuthenticationFilter.class);
     }
+
+
+
+
+
 }
