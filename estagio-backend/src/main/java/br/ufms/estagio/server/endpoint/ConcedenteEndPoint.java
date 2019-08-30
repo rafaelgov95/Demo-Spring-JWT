@@ -31,4 +31,6 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping(path = "/concedentes")
 public class ConcedenteEndPoint extends ReadWriteEndPoint<Concedente<Pessoa>, Long, ConcedenteService> {
 
+
+
 }
